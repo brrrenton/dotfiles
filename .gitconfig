@@ -1,0 +1,9 @@
+[push]
+	default = simple
+[user]
+	name = Brenton Leighton
+    email = email_address
+
+[core]
+	excludesfile = ~/.gitignore
+

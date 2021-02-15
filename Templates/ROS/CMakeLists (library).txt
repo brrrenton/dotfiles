@@ -1,0 +1,23 @@
+cmake_minimum_required(VERSION 3.1.3)
+
+project(project_name)
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+find_package(catkin REQUIRED COMPONENTS
+        roscpp
+        )
+
+catkin_package(
+        INCLUDE_DIRS include
+        LIBRARIES ${PROJECT_NAME}
+        CATKIN_DEPENDS roscpp
+        )
+
+add_library(${PROJECT_NAME} src/library.cpp)
+add_dependencies(${PROJECT_NAME} ${catkin_EXPORTED_TARGETS})
+target_include_directories(${PROJECT_NAME} SYSTEM PRIVATE ${catkin_INCLUDE_DIRS})
+target_include_directories(${PROJECT_NAME} PUBLIC include)
+target_link_libraries(${PROJECT_NAME} ${catkin_LIBRARIES})
+

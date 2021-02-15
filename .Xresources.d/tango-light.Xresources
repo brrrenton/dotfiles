@@ -1,0 +1,6 @@
+*.foreground:   #2e3436
+*.background:   #eeeeec
+URxvt.intensityStyles: false
+
+#include "tango-common.Xresources"
+

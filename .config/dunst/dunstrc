@@ -1,0 +1,48 @@
+#dunst -font "Ubuntu 12" -nf "#bbbbbb" -nb "#222222" -nfr "#444444" -geometry 400x10-20+42
+
+[global]
+
+follow = mouse
+geometry = "500x10-20+42"
+indicate_hidden = yes
+shrink = no
+transparency = 0
+notification_height = 0
+separator_height = 3
+padding = 15
+horizontal_padding = 15
+frame_width = 3
+separator_color = frame
+
+font = "Ubuntu 12"
+markup = full
+word_wrap = yes
+ignore_newline = no
+
+
+icon_position = left
+min_icon_size = 0
+max_icon_size = 48
+icon_path = /usr/share/icons/Adwaita/16x16/status/:/usr/share/icons/Adwaita/16x16/devices/
+
+[urgency_low]
+
+foreground = "#bbbbbb"
+background = "#222222"
+frame_color = "#b3005f"
+timeout = 5
+
+[urgency_normal]
+
+foreground = "#bbbbbb"
+background = "#222222"
+frame_color = "#b3005f"
+timeout = 10
+
+[urgency_critical]
+
+foreground = "#bbbbbb"
+background = "#222222"
+frame_color = "#b3005f"
+timeout = 0
+

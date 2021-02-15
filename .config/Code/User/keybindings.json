@@ -1,0 +1,14 @@
+// Place your key bindings in this file to override the defaultsauto[]
+[
+    {
+        "key": "ctrl+k v",
+        "command": "graphviz-interactive-preview.preview.beside",
+        "when": "!notebookEditorFocused && editorLangId == 'dot'"
+    },
+    {
+        "key": "ctrl+k v",
+        "command": "plantuml.preview",
+        "when": "!notebookEditorFocused && editorLangId == 'plantuml'"
+    }
+]
+

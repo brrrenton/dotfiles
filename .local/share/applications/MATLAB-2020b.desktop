@@ -1,0 +1,12 @@
+#!/usr/bin/env xdg-open
+
+[Desktop Entry]
+Version=1.0
+Terminal=false
+Type=Application
+Name=MATLAB 2020b
+Exec=/opt/MATLAB/R2020b/bin/matlab -desktop -useStartupFolderPref
+Icon=/opt/MATLAB/R2020b/bin/glnxa64/cef_resources/matlab_icon.png
+StartupWMClass=MATLAB R2020b - academic use
+
+Name[en_AU]=MATLAB-2020b

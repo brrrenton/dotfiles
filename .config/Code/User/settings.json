@@ -1,0 +1,8 @@
+{
+    "telemetry.enableTelemetry": false,
+    "telemetry.enableCrashReporter": false,
+    "window.autoDetectColorScheme": true,
+    "workbench.colorTheme": "Default Light+",
+    "editor.minimap.enabled": false,
+    "editor.scrollBeyondLastLine": false,
+}

@@ -1,0 +1,12 @@
+# CMake build directories
+cmake-build-*/
+
+# Qt Creator
+CMakeLists.txt.user
+
+# CLion
+.idea/
+
+# Python binaries
+*.pyc
+
