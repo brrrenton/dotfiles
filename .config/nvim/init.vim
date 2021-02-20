@@ -7,8 +7,6 @@ set tabstop=4
 set expandtab
 set shiftround
 
-set colorcolumn=120
-
 " Enable mouse (use shift to disable)
 set mouse=a
 
