@@ -1,0 +1,10 @@
+#!/usr/bin/env xdg-open
+
+[Desktop Entry]
+Version=1.0
+Terminal=false
+Type=Application
+Name=PrusaSlicer
+Exec=$HOME/Applications/PrusaSlicer-2.3.0+linux-x64-202101111322.AppImage
+
+Name[en_AU]=PrusaSlicer
