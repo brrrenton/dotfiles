@@ -11,6 +11,9 @@ alias df='df -h'
 # Neovim
 if [ `which nvim` ]; then alias vim=nvim; fi
 
+# Screen
+alias scrn='screen -q'
+
 # Git
 alias ga='git add'
 alias gb='git branch'
