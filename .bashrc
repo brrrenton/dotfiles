@@ -2,6 +2,11 @@
 force_color_prompt=yes
 source /etc/skel/.bashrc
 
+if [ "$TERM" == "rxvt-unicode-256color" ]
+then
+    export TERM=xterm-256color
+fi
+
 export HISTCONTROL=ignoreboth:erasedups
 
 # Shorten command prompt to one directory
