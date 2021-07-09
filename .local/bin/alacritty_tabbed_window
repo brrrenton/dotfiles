@@ -1,0 +1,23 @@
+#!/bin/sh
+
+# Spawn a new terminal
+
+WID=$(xdpyinfo | grep focus | cut -d " " -f 4 | cut -d "," -f 1)
+CLASS=$(xprop -id $WID | grep WM_CLASS | cut -f 2 -d '"')
+
+# If the currently focused window is Alacritty:
+if [ "$CLASS" = "Alacritty" ]; then
+  # Set "ALACRITTY_CWD" to the working directory of the terminal
+  PID=$(xprop -id $WID | grep _NET_WM_PID | cut -d " " -f 3)
+  BASH_PID=$(pstree -paA $PID | grep -m 1 bash | cut -f 2 -d ",")  
+  ALACRITTY_CWD=$(readlink /proc/$BASH_PID/cwd)
+
+else
+  # Otherwise the "ALACRITTY_CWD" to ~/
+  ALACRITTY_CWD=$HOME
+
+fi
+
+# Run tabbed
+ALACRITTY_CWD=$ALACRITTY_CWD exec tabbed -c alacritty_tabbed_tab
+

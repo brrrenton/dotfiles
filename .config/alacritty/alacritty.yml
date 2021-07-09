@@ -84,6 +84,14 @@ key_bindings:
   - { key: V,              mods: Control|Shift, mode: ~Vi,     action: Paste            }
   - { key: C,              mods: Control|Shift,                action: Copy             }
   - { key: F,              mods: Control|Shift, mode: ~Search, action: SearchBackward   }
+  - { key: Up,             mods: Control|Shift,                action: ScrollLineUp     }
+  - { key: Down,           mods: Control|Shift,                action: ScrollLineDown   }
+  - { key: PageUp,         mods: Control|Shift,                action: ScrollPageUp     }
+  - { key: PageDown,       mods: Control|Shift,                action: ScrollPageDown   }
+  - { key: Home,           mods: Control|Shift,                action: ScrollToTop      }
+  - { key: Left,           mods: Control|Shift,                action: ScrollToTop      }
+  - { key: End,            mods: Control|Shift,                action: ScrollToBottom   }
+  - { key: Right,          mods: Control|Shift,                action: ScrollToBottom   }
   - { key: Key0,           mods: Control|Shift,                action: ResetFontSize    }
   - { key: Equals,         mods: Control|Shift,                action: IncreaseFontSize }
   - { key: Plus,           mods: Control|Shift,                action: IncreaseFontSize }
