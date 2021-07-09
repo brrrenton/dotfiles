@@ -2,11 +2,6 @@
 force_color_prompt=yes
 source /etc/skel/.bashrc
 
-if [ "$TERM" == "rxvt-unicode-256color" ]
-then
-    export TERM=xterm-256color
-fi
-
 export HISTCONTROL=ignoreboth:erasedups
 
 # Shorten command prompt to one directory
@@ -22,14 +17,12 @@ export LESS=' -NR '
 # Switch between light and dark themes
 dark()
 {
-    sed -i 's/\#include\ \".Xresources.d\/tango-light.Xresources\"/\#include\ \".Xresources.d\/tango-dark.Xresources\"/' ~/.Xresources
-    xrdb ~/.Xresources
+    sed -i 's/colors\:\ \*light/colors\:\ \*dark/' ~/.config/alacritty/alacritty.yml
 }
 
 light()
 {
-    sed -i 's/\#include\ \".Xresources.d\/tango-dark.Xresources\"/\#include\ \".Xresources.d\/tango-light.Xresources\"/' ~/.Xresources
-    xrdb ~/.Xresources
+    sed -i 's/colors\:\ \*dark/colors\:\ \*light/' ~/.config/alacritty/alacritty.yml
 }
 
 # Clang
@@ -43,7 +36,19 @@ then
     unset ROS_IP
     unset ROS_HOSTNAME
 
-    source ~/.local/bin/setup.bash
+    ROS_DISTRO=melodic
+	CATKIN_WS_PATH=~/Development/catkin_ws
+
+	if [ -f $CATKIN_WS_PATH/devel_isolated/setup.bash ]
+	then
+    	source $CATKIN_WS_PATH/devel_isolated/setup.bash
+	elif [ -f $CATKIN_WS_PATH/devel/setup.bash ]
+	then
+    	source $CATKIN_WS_PATH/devel/setup.bash
+	elif [ -f /opt/ros/$ROS_DISTRO/setup.bash ]
+	then
+    	source /opt/ros/$ROS_DISTRO/setup.bash
+	fi
 
     export ROS_MASTER_URI=http://$HOSTNAME.local:11311/
     export ROS_HOSTNAME=$HOSTNAME.local
@@ -81,5 +86,5 @@ then
 fi
 
 # PlatformIO
-export PATH=$PATH:$HOME/.platformio/penv/bin
+export PATH=$HOME/.platformio/penv/bin:$PATH
 
