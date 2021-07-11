@@ -15,7 +15,7 @@ from gi.repository import GObject, Nautilus
 class OpenTerminalExtension(GObject.GObject, Nautilus.MenuProvider):
     def _open_terminal(self, file_):
         filename = unquote(file_.get_uri()[7:])
-        call('tabbed -c urxvt -cd  "{0}" -embed &'.format(filename), shell=True)
+        call('tabbed -c alacritty --working-directory "{0}" --embed &'.format(filename), shell=True)
         
     def menu_activate_cb(self, menu, file_):
         self._open_terminal(file_)
