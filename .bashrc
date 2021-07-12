@@ -86,5 +86,5 @@ then
 fi
 
 # PlatformIO
-export PATH=$HOME/.platformio/penv/bin:$PATH
+export PATH=$PATH:$HOME/.platformio/penv/bin
 
